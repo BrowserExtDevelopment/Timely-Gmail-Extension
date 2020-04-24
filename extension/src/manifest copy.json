@@ -1,0 +1,36 @@
+{
+  "name": "__MSG_appName__",
+  "author": "WebDEV",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "__MSG_appDescription__",
+  "icons": {
+    "16": "assets/icons/icon_16.png",
+    "128": "assets/icons/icon_128.png"
+  },
+  "default_locale": "en",
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*", "https://inbox.google.com/*"],
+      "js": ["assets/js/inboxsdk.js", "content/content.js"],
+      "css": ["assets/css/style.css"]
+    }
+  ],
+  "background": {
+    "scripts": ["background/background.js", "hotreload/hotreload.js"],
+    "persistent": true
+  },
+  "permissions": ["https://mail.google.com/*"],
+  "options_ui": {
+    "page": "options/index.html"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "assets/icons/icon_16.png",
+      "48": "assets/icons/icon_48.png"
+    },
+    "default_title": "Timely",
+    "default_popup": "popup/index.html"
+  },
+  "web_accessible_resources": ["assets/img/*"]
+}

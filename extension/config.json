@@ -1,0 +1,16 @@
+{
+  "chromePath": "src",
+  "operaPath": "src",
+  "firefoxPath": "src",
+  "devDirectory": "dev",
+  "distDirectory": "dist",
+  "tempDirectory": "temp",
+  "DEV_BACKEND_URL": "http://localhost:8000",
+  "PROD_BACKEND_URL": "https://oauth.gettimely.email:8000",
+  "DEV_AUTH_URL": "http://localhost:8000/users/oauth",
+  "PROD_AUTH_URL": "https://oauth.gettimely.email:8000/users/oauth",
+  "DEV_DASHBOARD_URL": "http://localhost:8000/dashboard",
+  "PROD_DASHBOARD_URL": "https://oauth.gettimely.email:8000/dashboard",
+  "DEV_AUTH_CALLBACK_URL": "http://localhost:8000/users/oauth/callback",
+  "PROD_AUTH_CALLBACK_URL": "https://oauth.gettimely.email:8000/users/oauth/callback"
+}

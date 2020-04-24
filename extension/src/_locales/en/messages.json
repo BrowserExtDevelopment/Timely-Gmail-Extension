@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Timely",
+    "description": "Timely."
+  },
+  "appDescription": {
+    "message": "Timely",
+    "description": "The description of the extension."
+  },
+  "btnTooltip": {
+    "message": "Timely",
+    "description": "Tooltip for the button."
+  }
+}
