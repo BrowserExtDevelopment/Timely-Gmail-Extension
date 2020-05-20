@@ -7,6 +7,7 @@ import red from "@material-ui/core/colors/red";
 
 import ReplyByItem from "../ReplyByItem";
 import ReadByItem from "../ReadByItem";
+import MarkToReplyItem from "../MarkToReplyItem";
 
 const StyledMenu = withStyles({
   paper: {
@@ -84,6 +85,12 @@ const StatusBar = ({ handlers, initialStatus }) => {
         <ReplyByItem
           handlers={handlers.handlersReplyBy}
           initialStatus={initialStatus.replyBy}
+          onClick={handleClose}
+        />
+
+        <MarkToReplyItem
+          handlers={handlers.handlersMarkToReply}
+          initialStatus={initialStatus.markToReply}
           onClick={handleClose}
         />
       </StyledMenu>

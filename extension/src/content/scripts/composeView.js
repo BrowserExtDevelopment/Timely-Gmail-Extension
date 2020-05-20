@@ -1,5 +1,5 @@
 import { statusBar } from "./statusBar";
-import { readBy, replyBy } from "./htmlElments";
+import { readBy, replyBy, markToReply } from "./htmlElments";
 import { createDOM } from "./../../utils/helper";
 import uniqueString from "unique-string";
 import {
@@ -8,7 +8,8 @@ import {
   FORWARDED_MSG_PATTERN,
   READ_REPLY_PATTERN,
   READ_PATTERN,
-  REPLY_PATTERN
+  REPLY_PATTERN,
+  Mark_To_REPLY_PATTERN
 } from "./../../utils/constant";
 
 class ComposeView {
@@ -42,12 +43,17 @@ class ComposeView {
 
     const handlers = {
       handlersReadBy: { add: this.addReadBy, remove: this.removeReadBy },
-      handlersReplyBy: { add: this.addReplyBy, remove: this.removeReplyBy }
+      handlersReplyBy: { add: this.addReplyBy, remove: this.removeReplyBy },
+      handlersMarkToReply: {
+        add: this.addMarkToReply,
+        remove: this.removeMarkToReply
+      }
     };
 
     const initialStatus = {
       readBy: this.isExistReadBy(),
-      replyBy: this.isExistReplyBy()
+      replyBy: this.isExistReplyBy(),
+      markToReply: this.isExistMarkToReply()
     };
 
     statusBar(timelyButton, handlers, initialStatus);
@@ -85,6 +91,14 @@ class ComposeView {
     this.removeTimelyInEmail(READ_PATTERN);
   };
 
+  addMarkToReply = date => {
+    this.addTimelyInEmail(markToReply(date.format("YYYY-MM-DD")));
+  };
+
+  removeMarkToReply = () => {
+    this.removeTimelyInEmail(Mark_To_REPLY_PATTERN);
+  };
+
   isExistReadBy = () => {
     const strEmailBody = this.getBodyInEmail();
     return strEmailBody.match(READ_PATTERN) ? true : false;
@@ -93,6 +107,11 @@ class ComposeView {
   isExistReplyBy = () => {
     const strEmailBody = this.getBodyInEmail();
     return strEmailBody.match(REPLY_PATTERN) ? true : false;
+  };
+
+  isExistMarkToReply = () => {
+    const strEmailBody = this.getBodyInEmail();
+    return strEmailBody.match(Mark_To_REPLY_PATTERN) ? true : false;
   };
 
   addTimelyInEmail = str => {
