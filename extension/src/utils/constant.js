@@ -23,6 +23,5 @@ export const FORWARDED_MSG_PATTERN = /(.*)(<br>((?!<br>).)*-+\sForwarded message
 export const READ_REPLY_PATTERN = /<br>((?!<br>).)*@Timely:\sPlease\s(reply|read)\sby\s((?!<br>).)*/gi;
 export const REPLY_PATTERN = /<br>((?!<br>).)*@Timely:\sPlease\sreply\sby\s((?!<br>).)*/gi;
 export const READ_PATTERN = /<br>((?!<br>).)*@Timely:\sPlease\sread\sby\s((?!<br>).)*/gi;
-export const Mark_To_REPLY_PATTERN = /<br>((?!<br>).)*@Timely:\sPlease\smark\sto\sreply\s((?!<br>).)*/gi;
 
 export const SEARCHBAR_SELECTOR = "[role='search']";
